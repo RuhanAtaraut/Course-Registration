@@ -1,11 +1,11 @@
-<!-- registration/templates/home.html -->
+<!-- templates/home.html -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Presidency College</title>
+    <title>Presidency College - Course Registration</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -35,64 +35,31 @@
             color: #004080;
         }
 
-        form {
-            margin-top: 20px;
-        }
-
-        label {
+        .registration-button {
             display: block;
-            margin-bottom: 5px;
-            color: #004080;
-        }
-
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        button {
+            margin: 20px auto;
+            padding: 10px 20px;
             background-color: #004080;
             color: #fff;
-            padding: 10px;
-            border: none;
+            text-align: center;
+            text-decoration: none;
             border-radius: 5px;
             cursor: pointer;
         }
 
-        button:hover {
+        .registration-button:hover {
             background-color: #003366;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to Presidency College</h1>
+        <h1>Presidency College</h1>
     </header>
 
     <div class="container">
-        <p>
-            Explore the world of knowledge at Presidency College. We offer a variety of courses
-            to help you achieve your academic and career goals.
-        </p>
-
-        <!-- Form to take user inputs -->
-        <form method="post" action="{% url 'registration_form' %}">
-            {% csrf_token %}
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" required>
-
-            <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <!-- Add more input fields as needed -->
-
-            <button type="submit">Proceed to Registration</button>
-        </form>
+        <!-- Call to action button for registration -->
+        <a href="{% url 'registration_form' %}" class="registration-button">Register for Course</a>
     </div>
 </body>
 </html>
